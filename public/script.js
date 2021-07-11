@@ -24,7 +24,7 @@ const user = prompt("Enter your name");
 var peer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
-  port: "3030",
+  port: "443",  //443 //
 });
 
 let myVideoStream;
@@ -59,7 +59,6 @@ const connectToNewUser = (userId, stream) => {
 };
 
 peer.on("open", (id) => {
-  console.log("join-room ok ok ",ROOM_ID, id, user)
   socket.emit("join-room", ROOM_ID, id, user);
 });
 
