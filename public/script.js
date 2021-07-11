@@ -24,7 +24,7 @@ const user = prompt("Enter your name");
 var peer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
-  port: "443",  //443 //
+  port: "443",  //443 //3030
 });
 
 let myVideoStream;
@@ -137,4 +137,9 @@ socket.on("createMessage", (message, userName) => {
         }</span> </b>
         <span>${message}</span>
     </div>`;
+  // Scroll down
+  let messageWindow = document.querySelector(".main__chat_window")
+  messageWindow.scrollTop = messageWindow.scrollHeight
 });
+
+

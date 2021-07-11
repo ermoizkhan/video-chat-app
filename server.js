@@ -27,7 +27,7 @@ app.get("/:room", (req, res) => {
 io.on("connection", (socket) => {
   socket.on("join-room", (roomId, userId, userName) => {
 
-    console.log(roomId, userId, userName)
+    // console.log(roomId, userId, userName)
     socket.join(roomId);
 
     socket
@@ -37,7 +37,7 @@ io.on("connection", (socket) => {
 
     socket.on("message", (message) => {
       io.to(roomId).emit("createMessage", message, userName);
-      console.log(message)
+      // console.log(message)
     });
   });
 });
